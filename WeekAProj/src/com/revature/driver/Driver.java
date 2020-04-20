@@ -1,4 +1,5 @@
 package com.revature.driver;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,6 +30,7 @@ public class Driver {
 		System.out.println("1) Human");
 		System.out.println("2) Animal");
 		System.out.println("3) Average Human's Age");
+		System.out.println("4) List of Humans and Animals");
 		
 		// Store input in usable variable
 		String reply = userInput.nextLine();
@@ -66,6 +68,10 @@ public class Driver {
 		// Add new person
 		humans.add(person);
 		
+		// Continue
+				System.out.println("\nPress enter to continue...");
+				userInput.nextLine();
+				
 		// Loop back to the menu
 		System.out.println("\n\n\n\n\n");
 		MainMenu();
@@ -90,6 +96,10 @@ public class Driver {
 		// Add new animal
 		animals.add(pet);
 		
+		// Continue
+				System.out.println("\nPress enter to continue...");
+				userInput.nextLine();
+				
 		// Loop back to the menu
 	    System.out.println("\n\n\n\n\n");
 		MainMenu();
@@ -102,11 +112,37 @@ public class Driver {
 			average += i;
 		}
 		System.out.println("\n" + average / ages.size());
+		
+		// Continue
+				System.out.println("\nPress enter to continue...");
+				userInput.nextLine();
+				
+		// Loop back to the menu
+	    System.out.println("\n\n\n\n\n");
+		MainMenu();
+		break;
+		
+	case 4:
+		// Prints a list of animals and humans by iterating through the lists
+		System.out.println("--------------Humans-------------");
+		for (Human i : humans) {
+			System.out.println("Name: " + i.getName() + ", Age: " + i.getAge() + ", Gender: " + i.getGender());
+		}
+		System.out.println("\n-------------Animals-------------");
+		for (Animal i : animals) {
+			System.out.println("Name: " + i.getName() + ", Species: " + i.getSpecies() + ", Color: " + i.getColor());
+		}
+		
+		// Continue
+		System.out.println("\nPress enter to continue...");
+		userInput.nextLine();
+		
+		// Loop back to the menu
+	    System.out.println("\n\n\n\n\n");
+		MainMenu();
 		break;
 	}
 }
-	
-//
 
 // Methods to return the average age of all creatures
 public static int AverageAge (int a, int b) {
